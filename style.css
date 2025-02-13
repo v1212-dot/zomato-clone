@@ -1,0 +1,246 @@
+/* Reset and Base Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ff4d4d;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo img {
+    height: 20px;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header ul li {
+    display: inline;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+header ul li a:hover {
+    color: #ffcccc;
+}
+
+/* Main Section */
+main {
+    padding-top: 60px;
+}
+
+main section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+main section:first-child {
+    background: url('./backgroundimg.avif') no-repeat center center/cover;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main section:first-child img {
+    width: 200px;
+    animation: logoAnimation 2s infinite;
+}
+
+main section:first-child p {
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+main section:first-child input {
+    padding: 10px;
+    width: 300px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    text-align: center;
+    transition: width 0.3s;
+}
+
+main section:first-child input:focus {
+    width: 400px;
+}
+
+/* Food Delivery Section */
+.food-delivery {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #ff4d4d, #ff7373);
+    color: #fff;
+    text-align: center;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.food-delivery h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.section-subtitle {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #ffe6e6;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.feature-card {
+    background: #fff;
+    color: #333;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 77, 77, 0.3);
+    z-index: 1;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #ffe6e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    z-index: 2;
+    position: relative;
+}
+
+.feature-icon img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.feature-card h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #ff4d4d;
+    z-index: 2;
+    position: relative;
+}
+
+.feature-card p {
+    color: #666;
+    z-index: 2;
+    position: relative;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Animations */
+@keyframes logoAnimation {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    main section:first-child input {
+        width: 250px;
+    }
+
+    main section:first-child input:focus {
+        width: 300px;
+    }
+
+    .food-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
